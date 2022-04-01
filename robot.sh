@@ -19,7 +19,7 @@ case "${CMD}" in
         docker rm -f selenium-testsuite
         docker pull devopsdojo/selenium-yb:latest
         docker create --name="selenium-testsuite" devopsdojo/selenium-yb:latest
-        sed '3q;d' /tmp/shortname.txt | sed 's/8888/9966/1' | xargs -I 'my_arg' sed -i 's#http://petclinic#my_arg#' src/test/selenium-robot/resources/resource.robot
+        sed '3q;d' /tmp/shortname.txt | sed 's/8080/9966/1' | xargs -I 'my_arg' sed -i 's#http://petclinic#my_arg#' src/test/selenium-robot/resources/resource.robot
         sleep 2s
         docker cp src/test/selenium-robot/PetclinicTestCases selenium-testsuite:/home/robotframework/src/test/selenium-robot
         docker cp src/test/selenium-robot/resources selenium-testsuite:/home/robotframework/src/test/selenium-robot
